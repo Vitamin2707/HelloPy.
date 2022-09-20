@@ -48,17 +48,17 @@
 # Пример:
 # для k = 8 список будет выглядеть так: [-21 ,13, -8, 5, −3, 2, −1, 1, 0, 1, 1, 2, 3, 5, 8, 13,]
 
-one  = int(input('Please input integer: ')) 
-two1 = 0
-free2 = 1
-if one <= 0:
-    one = input('Input integer > 0: ')
-elif one == 1:
-    print(two1)
-elif one == 2:
-    print(free2)
-else:
-    print(0, 1, end=' ')
-    for i in range(2, one):
-        two1, free2 = free2, two1 + free2
-        print(free2, end=' ')
+# one  = int(input('Please input integer: ')) 
+# two1 = 0
+# free2 = 1
+# if one <= 0:
+#     one = input('Input integer > 0: ')
+# elif one == 1:
+#     print(two1)
+# elif one == 2:
+#     print(free2)
+# else:
+#     print(0, 1, end=' ')
+#     for i in range(2, one):
+#         two1, free2 = free2, two1 + free2
+#         print(free2, end=' ')
