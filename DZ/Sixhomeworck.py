@@ -17,56 +17,56 @@
 # Первый ход определяется жеребьёвкой. За один ход можно забрать не более чем 28 конфет(или сколько вы зададите). 
 # Тот, кто берет последнюю конфету - проиграл.
 
-from random import randint
+# from random import randint
 
-def input_dat(name):
-    x = int(input(f"{name}, введите количество конфет, которое возьмете от 1 до 28: "))
-    while x < 1 or x > 28:
-        x = int(input(f"{name}, введите корректное количество конфет: "))
-    return x
+# def input_dat(name):
+#     x = int(input(f"{name}, введите количество конфет, которое возьмете от 1 до 28: "))
+#     while x < 1 or x > 28:
+#         x = int(input(f"{name}, введите корректное количество конфет: "))
+#     return x
 
 
-def p_print(name, k, counter, value):
-    print(f"Ходил {name}, он взял {k}, теперь у него {counter}. Осталось на столе {value} конфет.")
+# def p_print(name, k, counter, value):
+#     print(f"Ходил {name}, он взял {k}, теперь у него {counter}. Осталось на столе {value} конфет.")
 
-player1 = input("Введите имя первого игрока: ")
-while True:
-    player2 = input("Введите имя второго игрока: ")
-    if player1 != player2:
-        break
-    else:
-         print("Данное имя занято, выберите другое")
-while True: 
-    value = int(input("Введите количество конфет на столе, не меньше 29 "))
-    if value >= 29:
-        break
-flag = randint(0,2) # флаг очередности
-if flag:
-    print(f"Первый ходит {player1}")
-else:
-    print(f"Первый ходит {player2}")
+# player1 = input("Введите имя первого игрока: ")
+# while True:
+#     player2 = input("Введите имя второго игрока: ")
+#     if player1 != player2:
+#         break
+#     else:
+#          print("Данное имя занято, выберите другое")
+# while True: 
+#     value = int(input("Введите количество конфет на столе, не меньше 29 "))
+#     if value >= 29:
+#         break
+# flag = randint(0,2) # флаг очередности
+# if flag:
+#     print(f"Первый ходит {player1}")
+# else:
+#     print(f"Первый ходит {player2}")
 
-counter1 = 0 
-counter2 = 0
+# counter1 = 0 
+# counter2 = 0
 
-while value > 28:
-    if flag:
-        k = input_dat(player1)
-        counter1 += k
-        value -= k
-        flag = False
-        p_print(player1, k, counter1, value)
-    else:
-        k = input_dat(player2)
-        counter2 += k
-        value -= k
-        flag = True
-        p_print(player2, k, counter2, value)
+# while value > 28:
+#     if flag:
+#         k = input_dat(player1)
+#         counter1 += k
+#         value -= k
+#         flag = False
+#         p_print(player1, k, counter1, value)
+#     else:
+#         k = input_dat(player2)
+#         counter2 += k
+#         value -= k
+#         flag = True
+#         p_print(player2, k, counter2, value)
 
-if flag:
-    print(f"Выиграл {player1}")
-else:
-    print(f"Выиграл {player2}")
+# if flag:
+#     print(f"Выиграл {player1}")
+# else:
+#     print(f"Выиграл {player2}")
 
 # Игра с ботом
 
@@ -148,7 +148,8 @@ else:
 # Создайте два списка — один с названиями языков программирования, другой — с числами от 1 до длины первого.
 # ['python', 'c#']
 # [1,2]
-# Вам нужно сделать две функции: первая из которых создаст список кортежей, состоящих из номера и языка, написанного большими буквами.
+# Вам нужно сделать две функции: первая из которых создаст список кортежей, состоящих из номера и языка,
+#  написанного большими буквами.
 # [(1,'PYTHON'), (2,'C#')]
 # Вторая — которая отфильтрует этот список следующим образом: если сумма очков слова имеет в делителях номер, с которым она в паре в кортеже, то кортеж остается, его номер заменяется на сумму очков.
 # [сумма очков c# = 102, в делителях есть 2 с которым в паре. Значит список будет]
@@ -162,16 +163,16 @@ else:
 #      ''' 
 #      Функция объединяет два списка в кортеж 
 #      ''' 
-#      # for i in range(len(list1)): 
-#      #     list1[i] = list1[i].upper() 
-#      list1 = [char.upper() for char in list1] #Комментарий преподователя 
+#      for i in range(len(list1)): 
+#          list1[i] = list1[i].upper() 
+#      list1 = [char.upper() for char in list1]
   
 #      return dict(zip(list2, list1)) 
   
-#  def filter_elements(t_tuple:tuple) -> tuple: 
+# def filter_elements(t_tuple:tuple) -> tuple: 
 #      ''' 
-#      Функция осуществляет фильтрацию элементов и возвращает уже отфильтрованный кортеж 
-#      ''' 
+# #      Функция осуществляет фильтрацию элементов и возвращает уже отфильтрованный кортеж 
+# #      ''' 
 #      new_tuple = {} 
 #      for key, value in t_tuple.items(): 
 #          t_sum_kod = 0 
@@ -185,9 +186,9 @@ else:
 #      return new_tuple 
   
   
-#  language_list = ['Action Script', 'C++/CLI', 'C#', 'ColdFusion', 'Dart', 'Object Pascal', 'Dylan', 'Eiffel', 'Game Maker Language (GML)', 'Groovy', 'Haxe', 'Io', 'Java', 'JavaScript', 'MC#', 'Object Pascal'] 
-#  numbers_list = range(1, len(language_list) + 1) 
+# language_list = ['Action Script', 'C++/CLI', 'C#', 'ColdFusion', 'Dart', 'Object Pascal', 'Dylan', 'Eiffel', 'Game Maker Language (GML)', 'Groovy', 'Haxe', 'Io', 'Java', 'JavaScript', 'MC#', 'Object Pascal'] 
+# numbers_list = range(1, len(language_list) + 1) 
   
-#  rez = (set_tuple(language_list, numbers_list)) 
-#  print(rez) 
-#  print(filter_elements(rez))
+# rez = (set_tuple(language_list, numbers_list)) 
+# print(rez) 
+# print(filter_elements(rez))
